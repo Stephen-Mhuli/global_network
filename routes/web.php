@@ -1,19 +1,14 @@
 <?php
 
+use App\Http\Controllers\NetworkController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/networks', function(){
-    $ninjas = [
-        ["name" => "mario", "skill" => 75, "id" => "1"],
-        ["name" => "luigi", "skill" => 45, "id" => "2"]
-    ];
-    return view('networks.index', ["greeting" => "Hello, How are you?","ninjas" => $ninjas]);
-});
+Route::get('/networks',[NetworkController::class, 'index'])->name('networks.index');
 
-Route::get('/networks/{id}', function($id){
-    return view('networks.show', ["id" => $id]);
-});
+Route::get('/networks/create',[NetworkController::class, 'create'])->name('networks.create');
+
+Route::get('/networks/{id}',[NetworkController::class, 'show'])->name('networks.show');

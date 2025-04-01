@@ -1,10 +1,9 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Network</title>
-</head>
-<body>
-    <h2>Network Id - {{ $id }}</h2>
-</body>
-</html>
+<x-layout>
+    <h2>{{ $network->name }}</h2>
+
+    <div class='bg-gray-200 p-4 rounded'>
+        <p><strong>Bandwith Level:</strong> {{ $network->bandwith }}</p>
+        <p><strong>About me:</strong></p>
+        <p>{{ $network->description }}</p>
+    </div>
+  </x-layout>
