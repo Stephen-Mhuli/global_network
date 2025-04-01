@@ -10,4 +10,6 @@
         </li>
       @endforeach
     </ul>
+
+    {{ $networks->links() }}
   </x-layout>

@@ -9,7 +9,7 @@ class NetworkController extends Controller
 {
     public function index(){
         // route-> /networks/
-        $networks = Network::orderBy('created_at','desc')->get();
+        $networks = Network::orderBy('created_at','desc')->paginate(10);
         return view('networks.index',["networks" => $networks]);
     }
 
