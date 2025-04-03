@@ -9,13 +9,13 @@ class NetworkController extends Controller
 {
     public function index(){
         // route-> /networks/
-        $networks = Network::orderBy('created_at','desc')->paginate(10);
+        $networks = Network::with('region')->orderBy('created_at','desc')->paginate(10);
         return view('networks.index',["networks" => $networks]);
     }
 
     public function show($id){
         // route-> /networks/{id}
-        $network = Network::findOrFail($id);
+        $network = Network::with('region')->findOrFail($id);
         // echo $network;
         return view('networks.show', ["network" => $network]);
     }

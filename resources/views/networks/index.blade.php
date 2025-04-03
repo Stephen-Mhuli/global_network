@@ -5,7 +5,10 @@
       @foreach($networks as $network)
         <li>
           <x-card :highlight="$network->bandwith > 70" href="{{ route('networks.show', $network->id) }}">
-            <h3>{{ $network->name }}</h3>
+            <div>
+                <h3>{{ $network->name }}</h3>
+                <p>{{ $network->region->name }}</p>
+            </div>
           </x-card>
         </li>
       @endforeach

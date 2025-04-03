@@ -3,9 +3,7 @@
 use App\Http\Controllers\NetworkController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/','welcome');
 
 Route::get('/networks',[NetworkController::class, 'index'])->name('networks.index');
 

@@ -11,4 +11,8 @@ class Network extends Model
 
     /** @use HasFactory<\Database\Factories\NetworkFactory> */
     use HasFactory;
+
+    public function region(){
+        return $this->belongsTo(Region::class);
+    }
 }
